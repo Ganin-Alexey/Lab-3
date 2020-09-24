@@ -72,10 +72,9 @@ int main(){
 
     stud_1.NameSurnamePrint();
 
-    /*
-    student *p;
-    p = (student*)malloc(sizeof(student));
-    *p = init("Aleks2", "Ban2", 242678, 8913339);
-    display(*p);*/
+
+    student *p = new student();
+    p->init("Aleks2", "Ban2", 242678, 8913339);
+    p->display();
     return 0;
 }
