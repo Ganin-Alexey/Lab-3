@@ -76,5 +76,21 @@ int main(){
     student *p = new student();
     p->init("Aleks2", "Ban2", 242678, 8913339);
     p->display();
+
+    int COUNT_OBJ = 3;
+    student mass1[3];
+    student *mass2 = (student*)calloc(COUNT_OBJ, sizeof(student));
+    memset(mass2, 0, COUNT_OBJ * sizeof(student));
+
+    for (int i = 0; i < COUNT_OBJ; ++i){
+        mass1[i].init("Aleks", "Ban", i, i+1);
+        mass2[i].init("Aleks2", "Ban2", i, i+1);
+    }
+
+    for (int i = 0; i < COUNT_OBJ; i++){
+        mass1[i].display();
+        mass2[i].display();
+    }
+
     return 0;
 }
