@@ -92,5 +92,8 @@ int main(){
         mass2[i].display();
     }
 
+    delete p;
+    delete[] mass1;
+    delete mass2;
     return 0;
 }
