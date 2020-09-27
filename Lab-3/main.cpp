@@ -59,6 +59,7 @@ class student{
 
 int main(){
     setlocale(LC_ALL, "RUS");
+
     student stud_1;
     stud_1.init("Aleks", "Ban", 242678, 8913339);
 
@@ -81,6 +82,7 @@ int main(){
     student mass1[3];
     student *mass2 = (student*)calloc(COUNT_OBJ, sizeof(student));
     memset(mass2, 0, COUNT_OBJ * sizeof(student));
+    mass2 = new student[COUNT_OBJ];
 
     for (int i = 0; i < COUNT_OBJ; ++i){
         mass1[i].init("Aleks", "Ban", i, i+1);
@@ -92,8 +94,15 @@ int main(){
         mass2[i].display();
     }
 
+    delete[] mass2;
     delete p;
-    delete[] mass1;
-    delete mass2;
+    delete mass1;
+
+    int *ptrVar1 = (int*)calloc(1, sizeof(int));
+    char *ptrVar2 = (char*)malloc(15);
+    ptrVar2 = (char*)realloc(ptrVar2,16);
+
+    free(ptrVar1);
+    free(ptrVar2);
     return 0;
 }
